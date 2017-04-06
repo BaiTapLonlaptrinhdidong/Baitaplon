@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="titleNhaptien">Nhập tiền đang có</string>
+    <string name="Nhap_tien">Nhập vào số tiền</string>
+    <string name="Ghi">Ghi</string>
+    <string name="Muc_chi">Mục chi</string>
+    <string name="Dien_giai">Diễn giải</string>
+    <string name="Tu_tai_khoan">Từ tài khoản</string>
+    <string name="Su_kien">Sự kiện</string>
+    <string name="Huy">Hủy</string>
+    <string name="Xong">Xong</string>
+    <string name="Tai_khoan">Tài khoản</string>
+    <string name="Tong">Tổng: </string>
+    <string name="Con">Tiền còn lại: </string>
+    <string name="Hang_muc_thu">Hạng mục thu</string>
+    <string name="Hang_muc_chi">Hạng mục chi</string>
+    <string name="Chon_tai_khoan">Chọn tài khoản</string>
+
+</resources>

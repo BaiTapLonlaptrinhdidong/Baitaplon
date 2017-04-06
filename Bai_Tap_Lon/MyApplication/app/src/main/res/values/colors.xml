@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTileNhaptien">#45afa1</color>
+    <color name="colorTileGhiChep">#5cc9c7</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorEditCustom">#a6a59f</color>
+    <color name="colorButton">#2b9940</color>
+    <color name="colorBackgroundChung">#e4e0e0</color>
+    <color name="colorBlack">#000</color>
+</resources>
