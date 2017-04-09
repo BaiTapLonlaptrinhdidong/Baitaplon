@@ -4,6 +4,8 @@ import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
@@ -30,17 +32,14 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView= (BottomNavigationView) findViewById(R.id.bottom_navi);
 
         setFragment(0);
-
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 if(item.getItemId()== R.id.Ghi_chep)
                 {
                     setFragment(0);
                 }
-                else
+                if(item.getItemId()== R.id.Su_kien)
                 {
                     setFragment(1);
                 }
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
 
     }
 
@@ -62,17 +62,17 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction;
         switch (position) {
             case 0:
+                FragmentGhiChep fragmentGhiChep= new FragmentGhiChep();
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                ChiPhi chiPhi = new ChiPhi();
-                fragmentTransaction.replace(R.id.bottom_navi, chiPhi);
+                fragmentTransaction.replace(R.id.layout_top, fragmentGhiChep);
                 fragmentTransaction.commit();
                 break;
             case 1:
+                FragmentTaiKhoan fragmentTaiKhoan= new FragmentTaiKhoan();
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                ChiTien chiTien = new ChiTien();
-                fragmentTransaction.replace(R.id.bottom_navi, chiTien);
+                fragmentTransaction.replace(R.id.layout_top, fragmentTaiKhoan);
                 fragmentTransaction.commit();
                 break;
         }
