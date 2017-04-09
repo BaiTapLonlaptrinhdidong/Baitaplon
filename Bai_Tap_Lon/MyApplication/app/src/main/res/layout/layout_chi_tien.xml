@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lin_chi_tien">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_edit"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editSo_tien_chi"
+            android:hint="Số tiền chi"
+            android:textSize="35sp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="8"/>
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="2dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom_edit"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnMuc_chi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_double"
+            android:layout_margin="2dp"
+            android:text="@string/Muc_chi"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/txtMuc_chi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom_edit"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnDien_giai"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_double"
+            android:layout_margin="2dp"
+            android:text="@string/Dien_giai"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/txtDien_giai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom_edit"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTu_tai_khoan"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_double"
+                android:layout_margin="2dp"
+                android:text="@string/Tu_tai_khoan"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:gravity="fill"/>
+
+            <TextView
+                android:id="@+id/txtTu_tai_khoan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBlack"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSu_kien"
+                android:layout_width="200dp"
+                android:layout_height="47dp"
+                android:background="@drawable/button_double"
+                android:text="@string/Su_kien"
+                android:layout_marginLeft="2dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:gravity="fill"/>
+
+            <TextView
+                android:id="@+id/txtSu_kien"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <br.com.bloder.magic.view.MagicButton
+            android:id="@+id/magic_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:magic_button_size="50dp"
+            app:button_icon_width="25dp"
+            app:button_icon_height="25dp"
+            app:hide_text=""
+            app:hide_text_size="15dp"
+            app:hide_text_color="@android:color/black"
+            app:icon_button_color="@color/colorWhite"
+            app:expandable_area_color="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/txtNgay"
+            android:layout_marginTop="5dp"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_boder_round"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/img_btn_Lưu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
