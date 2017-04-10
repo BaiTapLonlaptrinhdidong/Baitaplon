@@ -20,7 +20,11 @@
 
         <activity android:name=".ActivityChiTien"/>
 
+        <activity android:name=".ActivityThuTien"/>
 
+        <activity android:name=".ActivitySuKien"/>
+
+        <activity android:name=".ActivityHangMucChi"/>
     </application>
 
 </manifest>

@@ -12,13 +12,12 @@ import android.view.ViewGroup;
  * Created by user on 09/04/2017.
  */
 
-public class ActivityThuTien extends Fragment {
+public class ActivityThuTien extends Activity {
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_thu_tien,container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.layout_thu_tien);
+
     }
-
-
 }

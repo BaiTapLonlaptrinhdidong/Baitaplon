@@ -50,10 +50,11 @@
         android:background="@drawable/custom_edit"
         android:layout_margin="16dp">
 
-        <MultiAutoCompleteTextView
+        <EditText
             android:id="@+id/edtDienGiai"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"/>
     </LinearLayout>
 
 </LinearLayout>

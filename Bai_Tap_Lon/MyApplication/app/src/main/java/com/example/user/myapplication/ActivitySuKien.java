@@ -8,13 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
- * Created by user on 09/04/2017.
+ * Created by user on 10/04/2017.
  */
 
-public class ActivityDienGiai extends Activity {
+public class ActivitySuKien extends Activity {
 
-    EditText edtDien_giai;
-    Button btnHuy_dien_giai, btnXong_dien_giai;
+    EditText edtSu_kien;
+    Button btnHuy_su_kien, btnXong_su_kien;
 
     Intent intent;
     Bundle bundle;
@@ -22,20 +22,19 @@ public class ActivityDienGiai extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_dien_giai);
+        setContentView(R.layout.su_kien);
 
-        edtDien_giai= (EditText)findViewById(R.id.edtDienGiai);
+        edtSu_kien= (EditText) findViewById(R.id.edtSu_kien);
 
-        btnHuy_dien_giai=(Button)findViewById(R.id.btnHuy_dien_giai);
-        btnXong_dien_giai=(Button)findViewById(R.id.btnXong_dien_giai);
+        btnXong_su_kien=(Button) findViewById(R.id.btnXong_su_kien);
+        btnHuy_su_kien=(Button) findViewById(R.id.btnHuy_su_kien);
 
         intent= new Intent();
         bundle= new Bundle();
 
-        btnXong_dien_giai.setOnClickListener(new MyEventXong());
-        btnHuy_dien_giai.setOnClickListener(new MyEventHuy());
 
-
+        btnXong_su_kien.setOnClickListener(new MyEventXong());
+        btnHuy_su_kien.setOnClickListener(new MyEventHuy());
     }
 
 
@@ -43,10 +42,10 @@ public class ActivityDienGiai extends Activity {
     {
         @Override
         public void onClick(View v) {
-            bundle.putString("keyDienGiai", edtDien_giai.getText().toString());
+            bundle.putString("keySuKien", edtSu_kien.getText().toString());
             intent.putExtras(bundle);
 
-            setResult(3, intent);
+            setResult(5, intent);
             finish();
         }
     }

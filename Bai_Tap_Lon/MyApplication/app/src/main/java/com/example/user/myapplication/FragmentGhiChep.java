@@ -25,8 +25,6 @@ public class FragmentGhiChep extends Fragment {
 
     ListView listGhi_chep;
 
-    Intent intent;
-
     AdapterListViewGhiChep adapterListViewGhiChep;
     ArrayList<CustomListViewGhiChep> arrayList;
 
@@ -54,5 +52,23 @@ public class FragmentGhiChep extends Fragment {
 
         adapterListViewGhiChep.notifyDataSetChanged();
 
+        listGhi_chep.setOnItemClickListener(new MySelect());
+    }
+
+    private class MySelect implements AdapterView.OnItemClickListener
+    {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if(position == 0)
+            {
+                Intent intent0= new Intent(getActivity(), ActivityChiTien.class);
+                startActivity(intent0);
+            }
+            if(position== 1)
+            {
+                Intent intent1= new Intent(getActivity(), ActivityThuTien.class);
+                startActivity(intent1);
+            }
+        }
     }
 }
