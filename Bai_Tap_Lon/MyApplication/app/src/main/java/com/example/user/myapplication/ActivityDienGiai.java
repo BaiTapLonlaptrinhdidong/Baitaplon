@@ -25,6 +25,7 @@ public class ActivityDienGiai extends Activity {
         setContentView(R.layout.layout_dien_giai);
 
         edtDien_giai= (EditText)findViewById(R.id.edtDienGiai);
+
         btnHuy_dien_giai=(Button)findViewById(R.id.btnHuy_dien_giai);
         btnXong_dien_giai=(Button)findViewById(R.id.btnXong_dien_giai);
 
@@ -37,12 +38,16 @@ public class ActivityDienGiai extends Activity {
 
         @Override
         public void onClick(View v) {
-            //intent= new Intent();
+            intent= new Intent();
+
             bundle= new Bundle();
             bundle.putString("keyDienGiai", edtDien_giai.getText().toString());
+
             intent.putExtras(bundle);
 
+            setResult(Activity.RESULT_OK, intent);
 
+            finish();
         }
     }
 
@@ -51,7 +56,6 @@ public class ActivityDienGiai extends Activity {
 
         @Override
         public void onClick(View v) {
-            finishFromChild(ActivityDienGiai.this);
         }
     }
 }
