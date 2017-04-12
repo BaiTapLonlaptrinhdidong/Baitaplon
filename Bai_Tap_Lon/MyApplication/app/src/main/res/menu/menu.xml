@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_subject_black_24dp"
         android:id="@+id/Ghi_chep"/>
 
-    <item android:title="@string/Su_kien"
+    <item android:title="@string/Tai_khoan"
         android:icon="@drawable/ic_subject_black_24dp"
         android:id="@+id/Su_kien"
         />

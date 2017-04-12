@@ -16,5 +16,13 @@
     <string name="Hang_muc_chi">Hạng mục chi</string>
     <string name="Chon_tai_khoan">Chọn tài khoản</string>
     <string name="GhiChep">Ghi chép</string>
+    <string name="Them_tai_khoan">Thêm tài khoản</string>
+    <string name="Ten">Tên</string>
+    <string name="Loai_tai_khoan">Loại tài khoản</string>
+    <string name="Loai_tien_ten">Loại tài khoản</string>
+    <string name="So_tien_ban_dau">Số tiền ban đầu</string>
+    <string name="Luu">Lưu</string>
+    <string name="Ten_tai_khoan">Tên tài khoản</string>
+    <string name="In_put">Input</string>
 
 </resources>

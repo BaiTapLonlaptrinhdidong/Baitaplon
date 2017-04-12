@@ -22,10 +22,16 @@
                 android:textSize="20sp"
                 android:layout_centerInParent="true"/>
 
+            <ImageButton
+                android:id="@+id/imgBtnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"/>
+
         </RelativeLayout>
 
         <ListView
-            android:id="@+id/List"
+            android:id="@+id/Listview_tai_khoan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

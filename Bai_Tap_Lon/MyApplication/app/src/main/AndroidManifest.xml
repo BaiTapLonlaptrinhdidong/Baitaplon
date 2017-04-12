@@ -25,6 +25,11 @@
         <activity android:name=".ActivitySuKien"/>
 
         <activity android:name=".ActivityHangMucChi"/>
+
+        <activity android:name=".ActivityCalculator"/>
+
+        <activity android:name=".ActivityThemTaiKhoan"/>
+
     </application>
 
 </manifest>
