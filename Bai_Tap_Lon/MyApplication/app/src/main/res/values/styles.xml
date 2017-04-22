@@ -11,6 +11,9 @@
     <style name="MyCutoms" parent="Base.Widget.AppCompat.Button.Colored">
         <item name="android:color">@color/colorWhite</item>
     </style>
-
-
+    
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

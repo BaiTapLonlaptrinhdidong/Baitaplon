@@ -11,7 +11,7 @@
     <string name="Xong">Xong</string>
     <string name="Tai_khoan">Tài khoản</string>
     <string name="Tong">Tổng: </string>
-    <string name="Con">Tiền còn lại: </string>
+    <string name="Con">Tiền còn:  </string>
     <string name="Hang_muc_thu">Hạng mục thu</string>
     <string name="Hang_muc_chi">Hạng mục chi</string>
     <string name="Chon_tai_khoan">Chọn tài khoản</string>
@@ -24,5 +24,31 @@
     <string name="Luu">Lưu</string>
     <string name="Ten_tai_khoan">Tên tài khoản</string>
     <string name="In_put">Input</string>
-
+    <string name="so1">1</string>
+    <string name="so2">2</string>
+    <string name="so3">3</string>
+    <string name="so4">4</string>
+    <string name="so5">5</string>
+    <string name="so6">6</string>
+    <string name="so7">7</string>
+    <string name="so8">8</string>
+    <string name="so9">9</string>
+    <string name="so0">0</string>
+    <string name="Dau_bang">=</string>
+    <string name="Dau_cham">.</string>
+    <string name="AC">AC</string>
+    <string name="Dau_nhan">*</string>
+    <string name="Dau_chia">/</string>
+    <string name="Dau_tru">-</string>
+    <string name="Dau_cong">+</string>
+    <string name="Chi_tien">Chi Tiền</string>
+    <string name="Chon_ngay">Chọn ngày</string>
+    <string name="Muc_thu">Mục thu</string>
+    <string name="Back">Back</string>
+    <string name="Thu_tien">Thu tiền</string>
+    <string name="So_tien_thu">Số tiền thu</string>
+    <string name="So_tien_chi">Số tiền chi</string>
+    <string name="Sua">Sửa</string>
+    <string name="Xoa">Xóa</string>
+    <string name="Sua_tai_khoan">Sửa tài khoản</string>
 </resources>

@@ -19,16 +19,37 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edtTai_khoan"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"/>
-
             <TextView
-                android:id="@+id/txtTien_con_lai"
+                android:id="@+id/txtTai_khoan_ten"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="@string/Con"/>
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGrayBlack"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="@string/Con"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/txtTien_con_lai"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20dp"
+                    android:paddingLeft="5dp"/>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
@@ -36,7 +57,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorEditCustom"/>
+        android:layout_height="2dp"
+        android:background="@color/colorGrayDam"/>
 
 </LinearLayout>

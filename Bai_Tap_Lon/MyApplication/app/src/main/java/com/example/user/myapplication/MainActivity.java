@@ -1,34 +1,39 @@
 package com.example.user.myapplication;
 
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 
-import br.com.bloder.magic.view.MagicButton;
+import com.example.user.myapplication.Fragment.FragmentGhiChep;
+import com.example.user.myapplication.Fragment.FragmentTaiKhoan;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    public static final int HANG_MUC_CHI= 1;
+    public static final int CALCULATOR= 11;
+    public static final int DIEN_GIAI= 3;
+    public static final int SU_KIEN= 5;
+    public static final int SO_TIEN_CHI= 2;
+    public static final int SO_TIEN_THU= 15;
+    public static final int DIEN_GIAI_THU= 17;
+    public static final int SU_KIEN_THU= 19;
+    public static final int HANG_MUC_THU= 16;
+    public static final int UPDATE_TAI_KHOAN= 4;
+    public static final int CALCULATOR_UPDATE= 6;
+    public static final int ADD_TAIKHOAN= 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.action_bar_bottom);
+
         bottomNavigationView= (BottomNavigationView) findViewById(R.id.bottom_navi);
 
         setFragment(0);
@@ -43,12 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 {
                     setFragment(1);
                 }
-
                 return false;
             }
         });
-
-
     }
 
     @Override
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-
+    //setFragment
     public void setFragment(int position) {
         FragmentManager fragmentManager;
         FragmentTransaction fragmentTransaction;

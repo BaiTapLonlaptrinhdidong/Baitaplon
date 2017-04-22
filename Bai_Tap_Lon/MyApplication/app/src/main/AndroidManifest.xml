@@ -16,19 +16,21 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ActivityDienGiai"/>
+        <activity android:name=".Activity.ActivityDienGiai"/>
 
-        <activity android:name=".ActivityChiTien"/>
+        <activity android:name=".Activity.ActivityChiTien"/>
 
-        <activity android:name=".ActivityThuTien"/>
+        <activity android:name=".Activity.ActivityThuTien"/>
 
-        <activity android:name=".ActivitySuKien"/>
+        <activity android:name=".Activity.ActivitySuKien"/>
 
-        <activity android:name=".ActivityHangMucChi"/>
+        <activity android:name=".Activity.ActivityHangMucChi"/>
 
-        <activity android:name=".ActivityCalculator"/>
+        <activity android:name=".Activity.ActivityCalculator"/>
 
-        <activity android:name=".ActivityThemTaiKhoan"/>
+        <activity android:name=".Activity.ActivityThemTaiKhoan"/>
+
+        <activity android:name=".Activity.ActivityUpdateTaiKhoan"/>
 
     </application>
 

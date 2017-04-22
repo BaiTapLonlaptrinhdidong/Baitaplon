@@ -6,8 +6,17 @@
     <color name="colorTileNhaptien">#45afa1</color>
     <color name="colorTileGhiChep">#5cc9c7</color>
     <color name="colorWhite">#fff</color>
-    <color name="colorEditCustom">#a6a59f</color>
-    <color name="colorButton">#2b9940</color>
-    <color name="colorBackgroundChung">#e4e0e0</color>
+    <color name="colorGrayDam">#a6a59f</color>
+    <color name="colorGreen">#008B00</color>
+    <color name="colorGray">#CFCFCF</color>
     <color name="colorBlack">#000</color>
+    <color name="colorBrown">#440000</color>
+    <color name="colorDeepSkyBlue">#00B2EE</color>
+    <color name="colorGrayBlack">#363636</color>
+    <color name="colorDarkGreen">#006400</color>
+    <color name="colorDarkCyan">#008B8B</color>
+    <color name="colorTurquoise">#00868B</color>
+    <color name="colorGreen2">#00EE00</color>
+    <color name="colorSlateGray">#6C7B8B</color>
+
 </resources>
