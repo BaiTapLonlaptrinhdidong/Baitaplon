@@ -24,17 +24,17 @@ import java.util.ArrayList;
 
 public class ActivityHangMucChi extends Activity {
 
-    Button btnXong_hang_muc_chi, btnHuy_hang_muc_chi;
-    Spinner spnHang_muc_chi;
-    ListView lvHang_muc_chi;
+    private Button  btnHuy_hang_muc_chi;
+    private Spinner spnHang_muc_chi;
+    private ListView lvHang_muc_chi;
 
-    Intent intent;
-    Bundle bundle;
+    private Intent intent;
+    private Bundle bundle;
 
-    ArrayList<CustomSpinnerHangMuc> spnArrayList;
-    ArrayList<CustomListViewHangMucChi> lvArrayList;
-    AdapterSpinnerHangMuc adapterSpinnerHangMuc;
-    AdapterListViewHangMucChi adapterListViewHangMucChi;
+    private ArrayList<CustomSpinnerHangMuc> spnArrayList;
+    private ArrayList<CustomListViewHangMucChi> lvArrayList;
+    private AdapterSpinnerHangMuc adapterSpinnerHangMuc;
+    private AdapterListViewHangMucChi adapterListViewHangMucChi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,6 @@ public class ActivityHangMucChi extends Activity {
 
         spnHang_muc_chi= (Spinner) findViewById(R.id.spnHang_muc_chi);
         lvHang_muc_chi=(ListView) findViewById(R.id.listviewHang_muc_chi);
-        btnXong_hang_muc_chi=(Button) findViewById(R.id.btnXong_hang_muc_chi);
         btnHuy_hang_muc_chi=(Button) findViewById(R.id.btnHuy_hang_muc_chi);
 
         intent= new Intent();
@@ -57,17 +56,17 @@ public class ActivityHangMucChi extends Activity {
         spnHang_muc_chi.setAdapter(adapterSpinnerHangMuc);
         lvHang_muc_chi.setAdapter(adapterListViewHangMucChi);
 
-        spnArrayList.add(new CustomSpinnerHangMuc("Ăn uống"));
-        spnArrayList.add(new CustomSpinnerHangMuc("Dịch vụ sinh hoạt"));
-        spnArrayList.add(new CustomSpinnerHangMuc("Đi lại"));
-        spnArrayList.add(new CustomSpinnerHangMuc("Giải trí"));
-        spnArrayList.add(new CustomSpinnerHangMuc("Sức khỏe"));
-        spnArrayList.add(new CustomSpinnerHangMuc("Hiếu hỉ"));
+        spnArrayList.add(new CustomSpinnerHangMuc("Ăn uống", R.mipmap.an_uong));
+        spnArrayList.add(new CustomSpinnerHangMuc("Dịch vụ sinh hoạt", R.mipmap.hoat_dong));
+        spnArrayList.add(new CustomSpinnerHangMuc("Đi lại", R.mipmap.di_lai));
+        spnArrayList.add(new CustomSpinnerHangMuc("Giải trí", R.mipmap.giai_tri));
+        spnArrayList.add(new CustomSpinnerHangMuc("Sức khỏe", R.mipmap.suc_khoe));
+        spnArrayList.add(new CustomSpinnerHangMuc("Hiếu hỉ",R.mipmap.hieu_hi));
 
         adapterSpinnerHangMuc.notifyDataSetChanged();
 
-
         spnHang_muc_chi.setOnItemSelectedListener(new EventSelect());
+        btnHuy_hang_muc_chi.setOnClickListener(new EventBack());
     }
 
     private class EventSelect implements AdapterView.OnItemSelectedListener
@@ -78,55 +77,55 @@ public class ActivityHangMucChi extends Activity {
             {
                 case 0:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Đi chợ/ siêu thị"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Ăn tiệm"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Cafe"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Đi chợ/ siêu thị", R.mipmap.sieu_thi));
+                    lvArrayList.add(new CustomListViewHangMucChi("Ăn tiệm", R.mipmap.an_tiem));
+                    lvArrayList.add(new CustomListViewHangMucChi("Cafe", R.mipmap.cafe));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventAnUong());
                     break;
                 case 1:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Điện"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Nước"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Internet"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Điện thoại di động"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Gas"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Truyền hình"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Điện", R.mipmap.dien));
+                    lvArrayList.add(new CustomListViewHangMucChi("Nước", R.mipmap.nuoc));
+                    lvArrayList.add(new CustomListViewHangMucChi("Internet", R.mipmap.internet));
+                    lvArrayList.add(new CustomListViewHangMucChi("Điện thoại di động", R.mipmap.dien_thoai_di_dong));
+                    lvArrayList.add(new CustomListViewHangMucChi("Gas", R.mipmap.gas));
+                    lvArrayList.add(new CustomListViewHangMucChi("Truyền hình", R.mipmap.truyen_hinh_cap));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventDichVuSinhHoat());
                     break;
                 case 2:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Xăng"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Bảo hiểm xe"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Sửa chữa, bảo dưỡng"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Gửi xe"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Rửa xe"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Taxi"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Xăng", R.mipmap.xang));
+                    lvArrayList.add(new CustomListViewHangMucChi("Bảo hiểm xe", R.mipmap.bao_hiem_xe));
+                    lvArrayList.add(new CustomListViewHangMucChi("Sửa chữa, bảo dưỡng", R.mipmap.bao_duong_xe));
+                    lvArrayList.add(new CustomListViewHangMucChi("Gửi xe", R.mipmap.do_xe));
+                    lvArrayList.add(new CustomListViewHangMucChi("Rửa xe", R.mipmap.rua_xe));
+                    lvArrayList.add(new CustomListViewHangMucChi("Taxi", R.mipmap.taxi));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventDiLai());
                     break;
                 case 3:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Du lịch"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Làm đẹp"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Vui chơi, xem phim"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Du lịch", R.mipmap.du_lich));
+                    lvArrayList.add(new CustomListViewHangMucChi("Làm đẹp", R.mipmap.lam_dep));
+                    lvArrayList.add(new CustomListViewHangMucChi("Vui chơi, xem phim", R.mipmap.xem_phim));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventGiaiTri());
                     break;
                 case 4:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Khám chữa bệnh"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Thuốc men"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Khám chữa bệnh", R.mipmap.kham_benh));
+                    lvArrayList.add(new CustomListViewHangMucChi("Thuốc men", R.mipmap.thuoc));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventSucKhoe());
                     break;
                 case 5:
                     adapterListViewHangMucChi.clear();
-                    lvArrayList.add(new CustomListViewHangMucChi("Cưới xin"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Ma chay"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Thăm hỏi"));
-                    lvArrayList.add(new CustomListViewHangMucChi("Biếu tặng"));
+                    lvArrayList.add(new CustomListViewHangMucChi("Cưới xin", R.mipmap.cuoi_hoi));
+                    lvArrayList.add(new CustomListViewHangMucChi("Ma chay", R.mipmap.dam_tang));
+                    lvArrayList.add(new CustomListViewHangMucChi("Thăm hỏi", R.mipmap.tham_hoi));
+                    lvArrayList.add(new CustomListViewHangMucChi("Biếu tặng", R.mipmap.tang_qua));
                     adapterListViewHangMucChi.notifyDataSetChanged();
                     lvHang_muc_chi.setOnItemClickListener(new EventHieuHi());
                     break;
@@ -326,6 +325,13 @@ public class ActivityHangMucChi extends Activity {
                     finish();
                     break;
             }
+        }
+    }
+
+    private class EventBack implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            finish();
         }
     }
 }

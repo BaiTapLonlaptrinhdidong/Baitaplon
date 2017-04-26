@@ -51,4 +51,11 @@
     <string name="Sua">Sửa</string>
     <string name="Xoa">Xóa</string>
     <string name="Sua_tai_khoan">Sửa tài khoản</string>
+    <string name="Vao_tai_khoan">Vào tài khoản</string>
+    <string name="Danh_sach">Danh sách</string>
+    <string name="Tien_chi">Tiền chi:</string>
+    <string name="muc_chi">Mục chi:</string>
+    <string name="dien_giai">Diễn giải:</string>
+    <string name="su_kien">Sự kiện:</string>
+    <string name="Tien_thu">Tiền thu:</string>
 </resources>

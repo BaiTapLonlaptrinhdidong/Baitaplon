@@ -1,5 +1,6 @@
 package com.example.user.myapplication;
 
+import android.app.ActionBar;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.example.user.myapplication.Fragment.FragmentDanhSach;
 import com.example.user.myapplication.Fragment.FragmentGhiChep;
 import com.example.user.myapplication.Fragment.FragmentTaiKhoan;
 
@@ -24,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
     public static final int SO_TIEN_THU= 15;
     public static final int DIEN_GIAI_THU= 17;
     public static final int SU_KIEN_THU= 19;
-    public static final int HANG_MUC_THU= 16;
+    public static final int VAO_TAI_KHOAN= 16;
     public static final int UPDATE_TAI_KHOAN= 4;
     public static final int CALCULATOR_UPDATE= 6;
     public static final int ADD_TAIKHOAN= 10;
+    public static final int CHON_TAI_KHOAN= 7;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.action_bar_bottom);
 
         bottomNavigationView= (BottomNavigationView) findViewById(R.id.bottom_navi);
-
         setFragment(0);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,9 +51,20 @@ public class MainActivity extends AppCompatActivity {
                 {
                     setFragment(1);
                 }
+                if(item.getItemId()== R.id.Danh_sach)
+                {
+                    setFragment(2);
+                }
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
     @Override
@@ -75,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.layout_top, fragmentTaiKhoan);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                FragmentDanhSach fragmentDanhSach= new FragmentDanhSach();
+                fragmentManager= getSupportFragmentManager();
+                fragmentTransaction= fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.layout_top, fragmentDanhSach);
                 fragmentTransaction.commit();
                 break;
         }

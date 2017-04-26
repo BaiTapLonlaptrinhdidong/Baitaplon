@@ -31,7 +31,7 @@
 
 
             <Button
-                android:id="@+id/btnList_Ghi_chu"
+                android:id="@+id/btnBack_chi_tien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -64,10 +64,11 @@
             android:layout_weight="8"/>
 
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/vnd_new"
             android:layout_gravity="center_vertical"
-            android:layout_margin="2dp"/>
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
         <LinearLayout
@@ -200,6 +201,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp">
+
             <br.com.bloder.magic.view.MagicButton
                 android:id="@+id/btnMagic"
                 android:layout_width="wrap_content"
@@ -208,17 +210,18 @@
                 app:button_icon_width="25dp"
                 app:button_icon_height="25dp"
                 app:hide_text="@string/Chon_ngay"
-                app:hide_text_size="20sp"
-                app:hide_text_color="@android:color/black"
+                app:hide_text_size="25sp"
+                app:hide_text_color="@color/colorWhite"
+                app:button_icon="@mipmap/lich_new"
                 app:icon_button_color="@color/colorWhite"
-                app:expandable_area_color="@color/colorWhite"/>
+                app:expandable_area_color="@color/colorRed"/>
 
             <TextView
                 android:id="@+id/txtNgay"
                 android:layout_marginTop="5dp"
                 android:layout_width="230dp"
                 android:layout_height="40dp"
-                android:background="@drawable/custom_boder_round"
+                android:background="@drawable/custom_boder_round_nobackgr"
                 android:textSize="20sp"
                 android:paddingLeft="5dp"
                 android:padding="5dp"/>
@@ -226,9 +229,11 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/img_btn_Lưu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imgBtn_Lưu_chi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@mipmap/save_file"
             android:layout_gravity="center"/>
 
     </LinearLayout>

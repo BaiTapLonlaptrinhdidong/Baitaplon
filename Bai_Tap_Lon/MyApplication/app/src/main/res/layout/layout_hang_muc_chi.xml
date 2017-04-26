@@ -6,8 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorGray">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,17 +33,6 @@
                 android:textSize="18sp"
                 android:textAllCaps="false"
                 android:layout_alignParentLeft="true"/>
-
-            <Button
-                android:id="@+id/btnXong_hang_muc_chi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_square"
-                android:text="@string/Xong"
-                android:textColor="@color/colorWhite"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
 

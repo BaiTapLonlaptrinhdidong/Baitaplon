@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/custom_square_nobder">
@@ -13,7 +13,8 @@
         <ImageView
             android:id="@+id/imgTitle_listview_hang_muc_chi"
             android:layout_width="60dp"
-            android:layout_height="60dp"/>
+            android:layout_height="60dp"
+            android:padding="3dp"/>
 
         <LinearLayout
             android:layout_width="250dp"
@@ -22,14 +23,18 @@
             <TextView
                 android:id="@+id/txtLisview_title_hang_muc_chi"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"
+                android:paddingTop="10dp"
+                android:padding="5dp"/>
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imgListview_hang_muc_chi"
-            android:layout_width="30dp"
-            android:layout_height="60dp" />
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/intend"/>
 
     </LinearLayout>
 

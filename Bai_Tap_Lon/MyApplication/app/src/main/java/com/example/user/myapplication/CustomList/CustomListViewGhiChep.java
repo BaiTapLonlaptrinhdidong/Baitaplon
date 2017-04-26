@@ -8,10 +8,25 @@ public class CustomListViewGhiChep {
 
     private String tieude;
     private String giaithich;
+    private int img;
+
+    public CustomListViewGhiChep(String tieude, String giaithich, int img) {
+        this.tieude = tieude;
+        this.giaithich = giaithich;
+        this.img = img;
+    }
 
     public CustomListViewGhiChep(String tieude, String giaithich) {
         this.tieude = tieude;
         this.giaithich = giaithich;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 
     public String getGiaithich() {

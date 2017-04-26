@@ -7,6 +7,20 @@ package com.example.user.myapplication.CustomList;
 public class CustomSpinnerHangMuc {
 
     private String TenHangMuc;
+    private int Img;
+
+    public CustomSpinnerHangMuc(String tenHangMuc, int img) {
+        TenHangMuc = tenHangMuc;
+        Img = img;
+    }
+
+    public int getImg() {
+        return Img;
+    }
+
+    public void setImg(int img) {
+        Img = img;
+    }
 
     public CustomSpinnerHangMuc(String tenHangMuc) {
         TenHangMuc = tenHangMuc;

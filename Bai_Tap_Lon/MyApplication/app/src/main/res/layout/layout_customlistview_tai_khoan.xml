@@ -12,7 +12,8 @@
         <ImageView
             android:id="@+id/imgTai_khoan"
             android:layout_width="60dp"
-            android:layout_height="60dp"/>
+            android:layout_height="60dp"
+            android:padding="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"

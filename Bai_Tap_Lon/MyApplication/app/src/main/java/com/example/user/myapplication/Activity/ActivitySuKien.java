@@ -16,11 +16,11 @@ import com.example.user.myapplication.R;
 
 public class ActivitySuKien extends Activity {
 
-    EditText edtSu_kien;
-    Button btnHuy_su_kien, btnXong_su_kien;
+    private EditText edtSu_kien;
+    private Button btnHuy_su_kien, btnXong_su_kien;
 
-    Intent intent;
-    Bundle bundle;
+    private Intent intent;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

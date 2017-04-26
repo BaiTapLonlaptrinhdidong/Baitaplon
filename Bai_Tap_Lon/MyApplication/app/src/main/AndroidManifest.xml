@@ -32,6 +32,8 @@
 
         <activity android:name=".Activity.ActivityUpdateTaiKhoan"/>
 
+        <activity android:name=".Activity.AcitivityChonTaiKhoan"/>
+
     </application>
 
 </manifest>

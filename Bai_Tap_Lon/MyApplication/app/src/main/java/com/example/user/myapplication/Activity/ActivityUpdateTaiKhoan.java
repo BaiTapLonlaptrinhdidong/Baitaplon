@@ -10,12 +10,12 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.myapplication.DTO.TaiKhoan;
-import com.example.user.myapplication.Database.TaiKhoanModify;
+import com.example.user.myapplication.Modify.TaiKhoanModify;
 import com.example.user.myapplication.MainActivity;
 import com.example.user.myapplication.R;
 
@@ -27,18 +27,19 @@ import java.io.ByteArrayOutputStream;
 
 public class ActivityUpdateTaiKhoan extends Activity {
 
-    EditText edtTen_tai_khoan_up;
-    TextView txtSo_tien_ban_dau_up, txtDialogLoai_tai_khoan_up;
-    Button btnLuu_up;
+    private EditText edtTen_tai_khoan_up;
+    private TextView txtSo_tien_ban_dau_up, txtDialogLoai_tai_khoan_up;
+    private Button btnLuu_up;
+    private ImageButton  imgBtn_Back;
 
     Intent intent;
     Bundle bundle= new Bundle();
-    String [] Loaitaikhoan= {"Tiền mặt", "Thẻ tín dụng", "Tài khoản tiết kiệm", "Tài khoản khác"};
-    double kq;
-    TaiKhoan taikhoan= new TaiKhoan();
-    TaiKhoanModify taiKhoanModify;
-    int id;
-    byte[] imgBytes;
+    private String [] Loaitaikhoan= {"Tiền mặt", "Thẻ tín dụng", "Tài khoản tiết kiệm", "Tài khoản khác"};
+    private double kq;
+    private TaiKhoan taikhoan= new TaiKhoan();
+    private TaiKhoanModify taiKhoanModify;
+    private int id;
+    private byte[] imgBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +50,15 @@ public class ActivityUpdateTaiKhoan extends Activity {
         txtSo_tien_ban_dau_up= (TextView)findViewById(R.id.txtSo_tien_ban_dau_up);
         txtDialogLoai_tai_khoan_up=(TextView) findViewById(R.id.txtDialog_loai_tai_khoan_up);
         btnLuu_up=(Button) findViewById(R.id.btnLuu_them_tai_khoan_up);
+        imgBtn_Back= (ImageButton) findViewById(R.id.imgBtn_Back_update);
 
         LoadTaiKhoan();
         taiKhoanModify= new TaiKhoanModify(this);
 
-        txtSo_tien_ban_dau_up.setOnClickListener(new EvenCalculator());
-        txtDialogLoai_tai_khoan_up.setOnClickListener(new EvenLoaiTaiKhoan());
-        btnLuu_up.setOnClickListener(new EvenUpdate());
+        txtSo_tien_ban_dau_up.setOnClickListener(new EventCalculator());
+        txtDialogLoai_tai_khoan_up.setOnClickListener(new EventLoaiTaiKhoan());
+        btnLuu_up.setOnClickListener(new EventUpdate());
+        imgBtn_Back.setOnClickListener(new EventBack());
     }
 
 
@@ -69,14 +72,21 @@ public class ActivityUpdateTaiKhoan extends Activity {
         txtSo_tien_ban_dau_up.setText(bundle.getString("KeyMoney"));
     }
     //Calculator
-    private class EvenCalculator implements View.OnClickListener {
+    private class EventCalculator implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             intent= new Intent(ActivityUpdateTaiKhoan.this, ActivityCalculator.class);
             startActivityForResult(intent, MainActivity.CALCULATOR_UPDATE);
         }
     }
-    private class EvenLoaiTaiKhoan implements View.OnClickListener {
+
+    private class EventBack implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    }
+    private class EventLoaiTaiKhoan implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             AlertDialog.Builder builder= new AlertDialog.Builder(ActivityUpdateTaiKhoan.this);
@@ -88,17 +98,19 @@ public class ActivityUpdateTaiKhoan extends Activity {
                             {
                                 case 0:
                                     txtDialogLoai_tai_khoan_up.setText("Tiền mặt");
-                                    taikhoan.setmImg(ImageView_to_Byte(R.drawable.ic_subject_black_18dp));
+                                    taikhoan.setmImg(ImageView_to_Byte(R.mipmap.tien_mat));
                                     break;
                                 case 1:
                                     txtDialogLoai_tai_khoan_up.setText("Thẻ tín dụng");
-                                    taikhoan.setmImg(ImageView_to_Byte(R.drawable.ic_subject_black_24dp));
+                                    taikhoan.setmImg(ImageView_to_Byte(R.mipmap.atm));
                                     break;
                                 case 2:
                                     txtDialogLoai_tai_khoan_up.setText("Tài khoản tiết kiệm");
+                                    taikhoan.setmImg(ImageView_to_Byte(R.mipmap.taikhoan_tietkiem));
                                     break;
                                 case 3:
                                     txtDialogLoai_tai_khoan_up.setText("Tài khoản khác");
+                                    taikhoan.setmImg(ImageView_to_Byte(R.mipmap.tien_khac));
                                     break;
                                 default:
                                     break;
@@ -138,7 +150,7 @@ public class ActivityUpdateTaiKhoan extends Activity {
         }
     }
 
-    private class EvenUpdate implements View.OnClickListener {
+    private class EventUpdate implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             taikhoan.setmName(edtTen_tai_khoan_up.getText().toString());

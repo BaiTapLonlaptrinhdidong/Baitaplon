@@ -18,16 +18,14 @@ import com.example.user.myapplication.R;
 
 public class ActivityCalculator extends Activity implements View.OnClickListener{
 
-    double thamsothunhat, thamsothuhai;
-    String stoantu, sxuatmanhinh="";
-    EditText edtGiaTri;
+    private double thamsothunhat, thamsothuhai;
+    private String stoantu, sxuatmanhinh="";
+    private EditText edtGiaTri;
 
-    Double send= null;
+    private Double send= null;
 
-
-
-    Intent intent;
-    Bundle bundle=new Bundle();
+    private Intent intent;
+    private Bundle bundle=new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -50,7 +50,7 @@ public class AdapterListViewGhiChep extends ArrayAdapter {
 
         txtTieu_de.setText(custom.getTieude().toString());
         txtGiai_thich.setText(custom.getGiaithich().toString());
-
+        imgTitle_ghi_chep.setImageResource(custom.getImg());
 
         return convertView;
     }

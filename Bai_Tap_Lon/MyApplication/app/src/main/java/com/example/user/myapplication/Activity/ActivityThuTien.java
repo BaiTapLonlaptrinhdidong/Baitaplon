@@ -4,19 +4,19 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.user.myapplication.DTO.DanhSachThu;
+import com.example.user.myapplication.DTO.TaiKhoan;
+import com.example.user.myapplication.Modify.DanhSachThuModify;
+import com.example.user.myapplication.Modify.TaiKhoanModify;
 import com.example.user.myapplication.MainActivity;
 import com.example.user.myapplication.R;
-
-import java.util.Date;
 
 import br.com.bloder.magic.view.MagicButton;
 
@@ -26,15 +26,20 @@ import br.com.bloder.magic.view.MagicButton;
 
 public class ActivityThuTien extends Activity {
 
-    Button btnMucchi, btnDiengiai, btnTuTaiKhoan, btnSukien;
-    MagicButton btnMagic;
-    TextView txtDiengiai, txtSukien, txtMucThu, txtDate, txtSotienthu;
+    private Button btnDiengiai, btnTuTaiKhoan, btnSukien, btnBack;
+    private MagicButton btnMagic;
+    private TextView txtDiengiai, txtSukien, txtDate, txtSotienthu, txtVaoTaiKhoan;
+    private ImageButton imgBtnLuu;
 
-    Intent intent;
-    Bundle bundle= new Bundle();
-    java.util.Calendar calendar;
-    Date date;
-    int month, year, day;
+    private Intent intent;
+    private Bundle bundle= new Bundle();
+    private java.util.Calendar calendar;
+    private int month, year, day;
+    private int ID;
+    private double Money;
+    private byte[] Img;
+    private TaiKhoanModify taiKhoanModify;
+    private DanhSachThuModify danhSachThuModify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,28 +48,34 @@ public class ActivityThuTien extends Activity {
 
         txtDiengiai=(TextView) findViewById(R.id.txtDien_giai_thu_tien);
         txtSukien=(TextView) findViewById(R.id.txtSu_kien_thu_tien);
-        txtMucThu=(TextView) findViewById(R.id.txtMuc_thu);
         txtDate=(TextView) findViewById(R.id.txtNgay_thu_tien);
         txtSotienthu=(TextView) findViewById(R.id.txtSo_tien_thu);
+        txtVaoTaiKhoan= (TextView) findViewById(R.id.txtTu_tai_khoan_thu_tien);
 
-        btnMucchi=(Button) findViewById(R.id.btnMuc_thu);
         btnDiengiai=(Button) findViewById(R.id.btnDien_giai_thu_tien);
         btnSukien=(Button) findViewById(R.id.btnSu_kien_thu_tien);
         btnTuTaiKhoan=(Button) findViewById(R.id.btnTu_tai_khoan_thu_tien);
         btnMagic=(MagicButton) findViewById(R.id.btnMagic_thu_tien);
+        btnBack= (Button) findViewById(R.id.btnBack_thu_tien);
 
+        imgBtnLuu= (ImageButton) findViewById(R.id.imgBtn_Luu_thu_tien);
+
+        taiKhoanModify= new TaiKhoanModify(this);
+        danhSachThuModify= new DanhSachThuModify(this);
         calendar= java.util.Calendar.getInstance();
         day= calendar.get(java.util.Calendar.DAY_OF_MONTH);
         month= calendar.get(java.util.Calendar.MONTH);
         year= calendar.get(java.util.Calendar.YEAR);
-        String strDate= String.valueOf(day)+ " / " +String.valueOf(month + 1) +" / "+ String.valueOf(year);
+        String strDate= String.valueOf(day)+ "/ " +String.valueOf(month + 1) +"/ "+ String.valueOf(year);
         txtDate.setText(strDate);
 
         btnDiengiai.setOnClickListener(new EventDienGiai());
         btnSukien.setOnClickListener(new EventSuKien());
-        btnMucchi.setOnClickListener(new EventMucThu());
         btnMagic.setMagicButtonClickListener(new EventNgay());
+        btnTuTaiKhoan.setOnClickListener(new EventTaiKhoan());
+        btnBack.setOnClickListener(new EventBack());
         txtSotienthu.setOnClickListener(new EventSoTienThu());
+        imgBtnLuu.setOnClickListener(new EventLuu());
     }
 
     private class EventSoTienThu implements View.OnClickListener {
@@ -84,7 +95,7 @@ public class ActivityThuTien extends Activity {
                     day= Integer.valueOf(d);
                     month= Integer.valueOf(m);
                     year= Integer.valueOf(y);
-                    txtDate.setText(day + "/" + (month +1) + "/" + year);
+                    txtDate.setText(day + "/ " + (month +1) + "/ " + year);
                 }
             };
             DatePickerDialog dateDialog= new DatePickerDialog(ActivityThuTien.this, calldateDialog, year, month, day);
@@ -108,11 +119,38 @@ public class ActivityThuTien extends Activity {
         }
     }
 
-    private class EventMucThu implements View.OnClickListener {
+    private class EventTaiKhoan implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            intent= new Intent(ActivityThuTien.this, ActivityHangMucChi.class);
-            startActivityForResult(intent, MainActivity.HANG_MUC_THU);
+            intent= new Intent(ActivityThuTien.this, AcitivityChonTaiKhoan.class);
+            startActivityForResult(intent, MainActivity.VAO_TAI_KHOAN);
+        }
+    }
+
+    private class EventBack implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    }
+
+    private class EventLuu implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            if(txtVaoTaiKhoan.getText().toString()== "")
+            {
+                Toast.makeText(ActivityThuTien.this, "Bạn phải chọn tài khoản", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                double moneyUpdate = Money + Double.parseDouble(txtSotienthu.getText().toString());
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan.setmMoney(String.valueOf(moneyUpdate));
+                taiKhoan.setmId(ID);
+                taiKhoanModify.upDateMoney(taiKhoan);
+                DanhSachThu danhsachthu = new DanhSachThu(txtSotienthu.getText().toString(), txtDiengiai.getText().toString(), Img, txtSukien.getText().toString(), txtDate.getText().toString());
+                danhSachThuModify.insertDanhSachThu(danhsachthu);
+                finish();
+            }
         }
     }
 
@@ -126,23 +164,26 @@ public class ActivityThuTien extends Activity {
                 bundle = data.getExtras();
                 txtDiengiai.setText(bundle.getString("keyDienGiai").toString());
             }
+
             if(requestCode== MainActivity.SU_KIEN_THU && resultCode== MainActivity.SU_KIEN) {
 
                 bundle = data.getExtras();
                 txtSukien.setText(bundle.getString("keySuKien").toString());
             }
 
-            if(requestCode== MainActivity.HANG_MUC_THU && resultCode== MainActivity.HANG_MUC_CHI) {
-
-                bundle= data.getExtras();
-                txtMucThu.setText(bundle.getString("keyHangMucChi"));
-            }
             if(requestCode== MainActivity.SO_TIEN_THU&& resultCode== MainActivity.CALCULATOR)
             {
                 bundle= data.getExtras();
                 txtSotienthu.setText(String.valueOf(bundle.getDouble("keyCalculator")));
             }
-
+            if(requestCode== MainActivity.VAO_TAI_KHOAN && resultCode== MainActivity.CHON_TAI_KHOAN)
+            {
+                bundle= data.getExtras();
+                txtVaoTaiKhoan.setText(bundle.getString("keyNameTaiKhoan"));
+                Money= Double.parseDouble(bundle.getString("keyMoneyTaiKhoan"));
+                ID= bundle.getInt("keyID");
+                Img= bundle.getByteArray("keyImg");
+            }
         }
         catch (Exception ex)
         {

@@ -24,16 +24,15 @@ import java.util.ArrayList;
 
 public class FragmentGhiChep extends Fragment {
 
-    ListView listGhi_chep;
+    private ListView listGhi_chep;
 
-    AdapterListViewGhiChep adapterListViewGhiChep;
-    ArrayList<CustomListViewGhiChep> arrayList;
+    private AdapterListViewGhiChep adapterListViewGhiChep;
+    private ArrayList<CustomListViewGhiChep> arrayList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.layout_listview_ghi_chep, container, false);
-
         return v;
     }
 
@@ -46,9 +45,9 @@ public class FragmentGhiChep extends Fragment {
         adapterListViewGhiChep = new AdapterListViewGhiChep(getActivity(), R.layout.layout_customlistview_ghi_chep, arrayList);
         listGhi_chep.setAdapter(adapterListViewGhiChep);
 
-        CustomListViewGhiChep custom= new CustomListViewGhiChep("Chi tiền", "Khi chi tiêu, cho vay, trả nợ");
+        CustomListViewGhiChep custom= new CustomListViewGhiChep("Chi tiền", "Khi chi tiêu, cho vay", R.mipmap.chi_tien);
         arrayList.add(custom);
-        CustomListViewGhiChep custom1= new CustomListViewGhiChep("Thu tiền", "Khi có thu nhập, đi vay, thu nợ");
+        CustomListViewGhiChep custom1= new CustomListViewGhiChep("Thu tiền", "Khi có thu nhập, đi vay", R.mipmap.thu_tien);
         arrayList.add(custom1);
 
         adapterListViewGhiChep.notifyDataSetChanged();

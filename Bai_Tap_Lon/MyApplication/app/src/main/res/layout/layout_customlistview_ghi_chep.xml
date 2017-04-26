@@ -5,15 +5,16 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/custom_square_nobder">
+        android:background="@drawable/cutom_square_nobackg">
 
         <ImageView
             android:id="@+id/imgTitle_listview_ghichep"
             android:layout_width="60dp"
-            android:layout_height="60dp"/>
+            android:layout_height="60dp"
+            android:padding="3dp"/>
 
         <LinearLayout
             android:layout_width="250dp"
@@ -23,7 +24,8 @@
             <TextView
                 android:id="@+id/txtTitle_listvew_ghichep"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:textSize="20sp"/>
 
             <TextView
                 android:background="@color/colorGrayBlack"
@@ -33,7 +35,8 @@
             <TextView
                 android:id="@+id/txtLisview_chuthich_ghichep"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:textSize="20sp"/>
 
         </LinearLayout>
 

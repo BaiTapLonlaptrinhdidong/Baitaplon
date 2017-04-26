@@ -1,10 +1,7 @@
 package com.example.user.myapplication.Fragment;
 
-import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,14 +18,10 @@ import android.widget.Toast;
 
 import com.example.user.myapplication.Activity.ActivityThemTaiKhoan;
 import com.example.user.myapplication.Activity.ActivityUpdateTaiKhoan;
-import com.example.user.myapplication.Adapter.AdapterListViewTaiKhoan;
 import com.example.user.myapplication.Adapter.AdapterTaiKhoan;
-import com.example.user.myapplication.CustomList.CustomListViewTaiKhoan;
-import com.example.user.myapplication.Database.TaiKhoanModify;
+import com.example.user.myapplication.Modify.TaiKhoanModify;
 import com.example.user.myapplication.MainActivity;
 import com.example.user.myapplication.R;
-
-import java.util.ArrayList;
 
 /**
  * Created by user on 09/04/2017.
@@ -36,13 +29,13 @@ import java.util.ArrayList;
 
 public class FragmentTaiKhoan extends Fragment {
 
-    ListView lvTai_khoan;
-    ImageButton imgBtnAdd;
+    private ListView lvTai_khoan;
+    private ImageButton imgBtnAdd;
 
-    Intent intent;
-    Bundle bundle= new Bundle();
-    AdapterTaiKhoan adapter;
-    TaiKhoanModify taiKhoanModify;
+    private Intent intent;
+    private Bundle bundle= new Bundle();
+    private AdapterTaiKhoan adapter;
+    private TaiKhoanModify taiKhoanModify;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

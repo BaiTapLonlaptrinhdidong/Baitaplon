@@ -47,6 +47,8 @@ public class AdapterListViewHangMucChi  extends ArrayAdapter {
         CustomListViewHangMucChi custom= arrayList.get(position);
 
         txtTitle_hang_muc_chi.setText(custom.getTieude());
+        imgTitle_hang_muc_chi.setImageResource(custom.getImg());
+        imgListview_hang_muc_chi.setImageResource(R.mipmap.intend);
 
         return convertView;
 

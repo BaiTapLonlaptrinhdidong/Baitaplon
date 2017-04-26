@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:title="@string/GhiChep"
-        android:icon="@drawable/ic_subject_black_24dp"
+        android:icon="@mipmap/ic_input_black_36dp"
         android:id="@+id/Ghi_chep"/>
 
     <item android:title="@string/Tai_khoan"
-        android:icon="@drawable/ic_subject_black_24dp"
-        android:id="@+id/Su_kien"
-        />
-
-
-
-
+        android:icon="@mipmap/ic_account_circle_black_36dp"
+        android:id="@+id/Su_kien"/>
+    <item android:title="@string/Danh_sach"
+        android:id="@+id/Danh_sach"
+        android:icon="@mipmap/ic_list_black_36dp"/>
 </menu>

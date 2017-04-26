@@ -18,5 +18,7 @@
     <color name="colorTurquoise">#00868B</color>
     <color name="colorGreen2">#00EE00</color>
     <color name="colorSlateGray">#6C7B8B</color>
+    <color name="colorGainsboro">#DCDCDC</color>
+    <color name="colorRed">#ec0c14</color>
 
 </resources>

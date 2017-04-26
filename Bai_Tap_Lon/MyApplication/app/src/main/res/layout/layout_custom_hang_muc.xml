@@ -8,23 +8,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/custom_boder_round"
-        android:layout_margin="10dp">
-
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_boder_round">
         <ImageView
             android:id="@+id/imgIcon_hang_muc"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"/>
-
-
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:padding="3dp"/>
         <TextView
             android:id="@+id/txtTen_hang_muc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="5dp"/>
-
-
+            android:textSize="23sp"
+            android:layout_marginEnd="5dp"
+            android:paddingStart="5dp"/>
     </LinearLayout>
 
 </LinearLayout>

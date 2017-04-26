@@ -7,9 +7,23 @@ package com.example.user.myapplication.CustomList;
 public class CustomListViewHangMucChi {
 
     private String Tieude;
+    private int Img;
+
+    public CustomListViewHangMucChi(String tieude, int img) {
+        Tieude = tieude;
+        Img = img;
+    }
 
     public CustomListViewHangMucChi(String tieude) {
         Tieude = tieude;
+    }
+
+    public int getImg() {
+        return Img;
+    }
+
+    public void setImg(int img) {
+        Img = img;
     }
 
     public String getTieude() {
