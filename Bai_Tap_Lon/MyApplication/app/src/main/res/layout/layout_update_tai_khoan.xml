@@ -23,12 +23,15 @@
 
         <ImageButton
             android:id="@+id/imgBtn_Back_update"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:layout_alignParentLeft="true"/>
+            android:background="@mipmap/back"
+            android:layout_marginStart="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
@@ -69,7 +72,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <TextView
@@ -79,7 +82,9 @@
                 android:layout_height="match_parent"
                 android:text="@string/Loai_tai_khoan"
                 android:textSize="20sp"
-                android:layout_weight="3"/>
+                android:layout_weight="3"
+                android:id="@+id/textView2" />
+
             <TextView
                 android:id="@+id/txtDialog_loai_tai_khoan_up"
                 android:layout_width="match_parent"
@@ -87,10 +92,6 @@
                 android:layout_weight="3"
                 android:textSize="20sp"
                 android:paddingTop="5dp"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="5"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -128,10 +129,11 @@
             android:layout_weight="8"/>
 
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/vnd_new"
             android:layout_gravity="center_vertical"
-            android:layout_margin="2dp"/>
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <Button

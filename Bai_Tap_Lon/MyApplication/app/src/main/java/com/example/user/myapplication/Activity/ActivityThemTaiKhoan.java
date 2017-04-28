@@ -29,7 +29,7 @@ public class ActivityThemTaiKhoan extends Activity {
 
     private EditText edtTen_tai_khoan;
     private TextView txtSo_tien_ban_dau, txtDialogLoai_tai_khoan;
-    private ImageView imgLoai_tai_khoan, imgD;
+    private ImageView imgD;
     private Button btnLuu;
     private ImageButton imgBtnBack;
 
@@ -48,7 +48,6 @@ public class ActivityThemTaiKhoan extends Activity {
         edtTen_tai_khoan= (EditText)findViewById(R.id.edtTen_them_tai_khoan);
         txtSo_tien_ban_dau= (TextView)findViewById(R.id.txtSo_tien_ban_dau);
         txtDialogLoai_tai_khoan=(TextView) findViewById(R.id.txtDialog_loai_tai_khoan);
-        imgLoai_tai_khoan=(ImageView) findViewById(R.id.imgLoai_tai_khoan);
         imgD= (ImageView) findViewById(R.id.imgD);
         btnLuu=(Button) findViewById(R.id.btnLuu_them_tai_khoan);
         imgBtnBack= (ImageButton) findViewById(R.id.imgBtn_Back);
