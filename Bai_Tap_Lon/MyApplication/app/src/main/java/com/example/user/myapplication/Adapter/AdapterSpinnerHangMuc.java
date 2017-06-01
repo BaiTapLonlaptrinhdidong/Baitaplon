@@ -1,6 +1,7 @@
 package com.example.user.myapplication.Adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +20,12 @@ import java.util.ArrayList;
 
 public class AdapterSpinnerHangMuc extends BaseAdapter {
 
-    private Activity activity;
+    private Context context;
     private int layoutId;
     private ArrayList<CustomSpinnerHangMuc> arrayList;
 
-    public AdapterSpinnerHangMuc(Activity activity, int layout, ArrayList<CustomSpinnerHangMuc> arrayList) {
-        this.activity = activity;
+    public AdapterSpinnerHangMuc(Context context, int layout, ArrayList<CustomSpinnerHangMuc> arrayList) {
+        this.context = context;
         this.layoutId = layout;
         this.arrayList = arrayList;
     }
@@ -46,18 +47,30 @@ public class AdapterSpinnerHangMuc extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
+        if(convertView== null)
+        {
+            convertView= LayoutInflater.from(context).inflate(layoutId, null);
+            viewHolder= new ViewHolder();
 
-        LayoutInflater layoutInflater= activity.getLayoutInflater();
-        convertView= layoutInflater.inflate(R.layout.layout_custom_hang_muc, null);
-
-        TextView txtTenHangmuc=(TextView) convertView.findViewById(R.id.txtTen_hang_muc);
-        ImageView imgHang_muc= (ImageView) convertView.findViewById(R.id.imgIcon_hang_muc);
+            viewHolder.txtTenHangmuc=(TextView) convertView.findViewById(R.id.txtTen_hang_muc);
+            viewHolder.imgHang_muc= (ImageView) convertView.findViewById(R.id.imgIcon_hang_muc);
+            convertView.setTag(viewHolder);
+        }
+        else {
+            viewHolder= (ViewHolder) convertView.getTag();
+        }
 
         CustomSpinnerHangMuc custom= arrayList.get(position);
 
-        txtTenHangmuc.setText(custom.getTenHangMuc().toString());
-        imgHang_muc.setImageResource(custom.getImg());
+        viewHolder.txtTenHangmuc.setText(custom.getTenHangMuc());
+        viewHolder.imgHang_muc.setImageResource(custom.getImg());
 
         return convertView;
+    }
+
+    private static class ViewHolder{
+        TextView txtTenHangmuc;
+        ImageView imgHang_muc;
     }
 }
