@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.myapplication.DTO.DanhSach;
+import com.example.user.myapplication.DTO.MothYear;
 import com.example.user.myapplication.DTO.TaiKhoan;
 import com.example.user.myapplication.Modify.DanhSachModify;
 import com.example.user.myapplication.Modify.TaiKhoanModify;
@@ -27,14 +28,14 @@ import br.com.bloder.magic.view.MagicButton;
 
 public class ActivityChiTien extends AppCompatActivity {
 
-    private Button btnMucchi, btnDiengiai, btnTuTaiKhoan, btnSukien, btnBack;
-    private MagicButton btnMagic;
+    Button btnMucchi, btnDiengiai, btnTuTaiKhoan, btnSukien, btnBack;
+    MagicButton btnMagic;
     private TextView txtDiengiai, txtSukien, txtMucChi, txtDate, txtSotienchi, txtTuTaiKhoan;
-    private ImageButton imgBtn_luu_chi;
+    ImageButton imgBtn_luu_chi;
 
     private Intent intent;
-    private Bundle bundle= new Bundle();
-    private java.util.Calendar calendar;
+    Bundle bundle= new Bundle();
+    java.util.Calendar calendar;
     private TaiKhoanModify taiKhoanModify;
     private DanhSachModify danhSachModify;
     private int month, year, day;
@@ -142,6 +143,11 @@ public class ActivityChiTien extends AppCompatActivity {
                 bundle= data.getExtras();
                 txtMucChi.setText(bundle.getString("keyHangMucChi"));
             }
+            if(resultCode== MainActivity.HANG_MUC_KHAC)
+            {
+                bundle= data.getExtras();
+                txtMucChi.setText(bundle.getString("keyHangMucKhac"));
+            }
             if(requestCode== MainActivity.SO_TIEN_CHI&& resultCode== MainActivity.CALCULATOR)
             {
                 bundle= data.getExtras();
@@ -155,7 +161,6 @@ public class ActivityChiTien extends AppCompatActivity {
                 ID= bundle.getInt("keyID");
                 Img= bundle.getByteArray("keyImg");
             }
-
         }
         catch (Exception ex)
         {
@@ -200,7 +205,7 @@ public class ActivityChiTien extends AppCompatActivity {
     private class EventLuu implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            if(txtTuTaiKhoan.getText().toString()== "")
+            if(txtTuTaiKhoan.getText().toString().equals(""))
             {
                 Toast.makeText(ActivityChiTien.this, "Bạn phải chọn tài khoản", Toast.LENGTH_SHORT).show();
             }
@@ -210,8 +215,10 @@ public class ActivityChiTien extends AppCompatActivity {
                 taiKhoan.setmMoney(String.valueOf(moneyUpdate));
                 taiKhoan.setmId(ID);
                 taiKhoanModify.upDateMoney(taiKhoan);
-                DanhSach danhsach = new DanhSach(txtSotienchi.getText().toString(), txtMucChi.getText().toString(), txtDiengiai.getText().toString(), txtSukien.getText().toString(), Img, txtDate.getText().toString());
+                DanhSach danhsach = new DanhSach(txtSotienchi.getText().toString(), txtMucChi.getText().toString(), txtDiengiai.getText().toString(), Img,txtSukien.getText().toString(), txtDate.getText().toString(), String.valueOf(month+ 1), String.valueOf(year));
                 danhSachModify.insertDanhSach(danhsach);
+
+
                 finish();
             }
         }

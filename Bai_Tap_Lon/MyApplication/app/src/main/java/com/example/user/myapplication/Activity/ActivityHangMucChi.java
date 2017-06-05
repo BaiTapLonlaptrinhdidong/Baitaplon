@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class ActivityHangMucChi extends Activity {
 
     private Button  btnHuy_hang_muc_chi;
+    private ImageButton imgBtn_hang_muc_khac;
     private Spinner spnHang_muc_chi;
     private ListView lvHang_muc_chi;
 
@@ -44,6 +46,7 @@ public class ActivityHangMucChi extends Activity {
         spnHang_muc_chi= (Spinner) findViewById(R.id.spnHang_muc_chi);
         lvHang_muc_chi=(ListView) findViewById(R.id.listviewHang_muc_chi);
         btnHuy_hang_muc_chi=(Button) findViewById(R.id.btnHuy_hang_muc_chi);
+        imgBtn_hang_muc_khac= (ImageButton) findViewById(R.id.imgBtn_Hang_muc_khac);
 
         intent= new Intent();
         bundle= new Bundle();
@@ -67,6 +70,7 @@ public class ActivityHangMucChi extends Activity {
 
         spnHang_muc_chi.setOnItemSelectedListener(new EventSelect());
         btnHuy_hang_muc_chi.setOnClickListener(new EventBack());
+        imgBtn_hang_muc_khac.setOnClickListener(new EventNewHangMuc());
     }
 
     private class EventSelect implements AdapterView.OnItemSelectedListener
@@ -331,6 +335,24 @@ public class ActivityHangMucChi extends Activity {
     private class EventBack implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            finish();
+        }
+    }
+
+    private class EventNewHangMuc implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent nintent= new Intent(ActivityHangMucChi.this, ActivityHangMucKhac.class);
+            startActivityForResult(nintent, MainActivity.HANG_MUC_KHAC);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode== MainActivity.HANG_MUC_KHAC && resultCode== MainActivity.HANG_MUC_KHAC)
+        {
+            setResult(MainActivity.HANG_MUC_KHAC, data);
             finish();
         }
     }

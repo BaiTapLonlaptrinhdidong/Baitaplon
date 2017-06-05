@@ -58,4 +58,10 @@
     <string name="dien_giai">Diễn giải:</string>
     <string name="su_kien">Sự kiện:</string>
     <string name="Tien_thu">Tiền thu:</string>
+    <string name="Tao_hang_muc_khac">Tạo hạng mục khác</string>
+    <string name="Ten_hang_muc_khac">Tên hạng mục khác: </string>
+    <string name="Thong_ke">Thống kê</string>
+    <string name="Nam">Năm</string>
+    <string name="Thang">Tháng</string>
+    <string name="Bao_cao">Báo cáo</string>
 </resources>

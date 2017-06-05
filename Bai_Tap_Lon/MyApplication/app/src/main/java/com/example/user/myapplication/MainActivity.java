@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import com.example.user.myapplication.Fragment.FragmentDanhSach;
 import com.example.user.myapplication.Fragment.FragmentGhiChep;
 import com.example.user.myapplication.Fragment.FragmentTaiKhoan;
+import com.example.user.myapplication.Fragment.FragmentThongKe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int CALCULATOR_UPDATE= 6;
     public static final int ADD_TAIKHOAN= 10;
     public static final int CHON_TAI_KHOAN= 7;
+    public static final int HANG_MUC_KHAC= 8;
 
 
     @Override
@@ -54,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId()== R.id.Danh_sach)
                 {
                     setFragment(2);
+                }
+                if(item.getItemId()== R.id.Thong_ke)
+                {
+                    setFragment(3);
                 }
                 return false;
             }
@@ -96,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager= getSupportFragmentManager();
                 fragmentTransaction= fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.layout_top, fragmentDanhSach);
+                fragmentTransaction.commit();
+                break;
+            case 3:
+                FragmentThongKe fragmentThongKe= new FragmentThongKe();
+                fragmentManager= getSupportFragmentManager();
+                fragmentTransaction= fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.layout_top, fragmentThongKe);
                 fragmentTransaction.commit();
                 break;
         }

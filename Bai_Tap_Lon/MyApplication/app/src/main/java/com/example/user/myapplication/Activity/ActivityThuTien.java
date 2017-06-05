@@ -147,7 +147,7 @@ public class ActivityThuTien extends Activity {
                 taiKhoan.setmMoney(String.valueOf(moneyUpdate));
                 taiKhoan.setmId(ID);
                 taiKhoanModify.upDateMoney(taiKhoan);
-                DanhSachThu danhsachthu = new DanhSachThu(txtSotienthu.getText().toString(), txtDiengiai.getText().toString(), Img, txtSukien.getText().toString(), txtDate.getText().toString());
+                DanhSachThu danhsachthu = new DanhSachThu(txtSotienthu.getText().toString(), txtDiengiai.getText().toString(), Img, txtSukien.getText().toString(), txtDate.getText().toString(), String.valueOf(month+ 1), String.valueOf(year));
                 danhSachThuModify.insertDanhSachThu(danhsachthu);
                 finish();
             }

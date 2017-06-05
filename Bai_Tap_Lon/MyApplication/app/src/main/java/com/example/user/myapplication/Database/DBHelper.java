@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 22;
     private static final String DATABASE_NAME = "myDatabase";
 
     private static final String TABLE_NAME = "taikhoan";
@@ -53,6 +53,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_TAIKHOAN_CHI= "taikhoan";
     private static final String KEY_SUKIEN_CHI= "sukien";
     private static final String KEY_NGAY_CHI= "date";
+    private static final String KEY_THANG_CHI= "month";
+    private static final String KEY_NAM_CHI= "year";
 
     public static String getTableNameChi() {
         return TABLE_NAME_CHI;
@@ -86,6 +88,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return KEY_NGAY_CHI;
     }
 
+    public static String getKeyNamChi() {
+        return KEY_NAM_CHI;
+    }
+
+    public static String getKeyThangChi() {
+        return KEY_THANG_CHI;
+    }
+
     private static final String TABLE_NAME_THU= "danhsachthu";
 
     private static final String KEY_ID_THU= "_id";
@@ -94,6 +104,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_TAIKHOAN_THU= "taikhoan";
     private static final String KEY_SUKIEN_THU= "sukien";
     private static final String KEY_NGAY_THU= "date";
+    private static final String KEY_THANG_THU="moth";
+    private static final String KEY_NAM_THU= "year";
 
     public static String getTableNameThu() {
         return TABLE_NAME_THU;
@@ -123,6 +135,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return KEY_NGAY_THU;
     }
 
+    public static String getKeyThangThu() {
+        return KEY_THANG_THU;
+    }
+
+    public static String getKeyNamThu() {
+        return KEY_NAM_THU;
+    }
+
     //tao bảng
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -140,7 +160,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_DIENGIAI_CHI + " TEXT,"
                 + KEY_TAIKHOAN_CHI + " BOLB,"
                 + KEY_SUKIEN_CHI + " TEXT,"
-                + KEY_NGAY_CHI + " TEXT)";
+                + KEY_NGAY_CHI + " TEXT,"
+                + KEY_THANG_CHI + " TEXT,"
+                + KEY_NAM_CHI + " TEXT)";
         db.execSQL(CREATE_TABLE_DANHSACH);
 
         String CREATE_TABLE_DANHSACH_THU = "CREATE TABLE " + TABLE_NAME_THU + " ("
@@ -149,7 +171,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_DIENGIAI_THU + " TEXT,"
                 + KEY_TAIKHOAN_THU + " BOLB,"
                 + KEY_SUKIEN_THU + " TEXT,"
-                + KEY_NGAY_THU + " TEXT)";
+                + KEY_NGAY_THU + " TEXT,"
+                + KEY_THANG_THU + " TEXT,"
+                +KEY_NAM_THU + " TEXT)";
         db.execSQL(CREATE_TABLE_DANHSACH_THU);
     }
     // tạo lại bảng

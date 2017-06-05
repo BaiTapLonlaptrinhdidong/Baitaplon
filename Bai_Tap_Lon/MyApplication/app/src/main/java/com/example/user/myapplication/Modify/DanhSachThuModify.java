@@ -46,6 +46,8 @@ public class DanhSachThuModify {
         values.put(DBHelper.getKeySukienThu(), danhsachthu.getnSuKien());
         values.put(DBHelper.getKeyNgayThu(), danhsachthu.getnNgay());
         values.put(DBHelper.getKeyTaikhoanThu(), danhsachthu.getnTaiKhoan());
+        values.put(DBHelper.getKeyThangThu(), danhsachthu.getnThang());
+        values.put(DBHelper.getKeyNamThu(), danhsachthu.getnNam());
 
         db.insert(DBHelper.getTableNameThu(), null, values);
         db.close();

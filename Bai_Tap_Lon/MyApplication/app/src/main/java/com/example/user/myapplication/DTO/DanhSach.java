@@ -12,24 +12,18 @@ public class DanhSach {
     private byte[] mTaiKhoan;
     private String mSuKien = "";
     private String mNgay= "";
+    private String mThang= "";
+    private String mNam= "";
 
-    public DanhSach(int mId, String mMoney, String mMucChi, String mDienGiai, byte[] mTaiKhoan, String mNgay, String mSuKien) {
-        this.mId = mId;
+    public DanhSach(String mMoney, String mMucChi, String mDienGiai, byte[] mTaiKhoan, String mSuKien, String mNgay, String mThang, String mNam) {
         this.mMoney = mMoney;
         this.mMucChi = mMucChi;
         this.mDienGiai = mDienGiai;
         this.mTaiKhoan = mTaiKhoan;
-        this.mNgay = mNgay;
         this.mSuKien = mSuKien;
-    }
-
-    public DanhSach(String mMoney, String mMucChi, String mDienGiai, String mSuKien, byte[] mTaiKhoan, String mNgay) {
-        this.mMoney = mMoney;
-        this.mMucChi = mMucChi;
-        this.mDienGiai = mDienGiai;
-        this.mSuKien = mSuKien;
-        this.mTaiKhoan = mTaiKhoan;
         this.mNgay = mNgay;
+        this.mThang = mThang;
+        this.mNam = mNam;
     }
 
     public DanhSach() {
@@ -89,5 +83,21 @@ public class DanhSach {
 
     public void setmNgay(String mNgay) {
         this.mNgay = mNgay;
+    }
+
+    public String getmThang() {
+        return mThang;
+    }
+
+    public void setmThang(String mThang) {
+        this.mThang = mThang;
+    }
+
+    public String getmNam() {
+        return mNam;
+    }
+
+    public void setmNam(String mNam) {
+        this.mNam = mNam;
     }
 }

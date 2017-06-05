@@ -12,4 +12,8 @@
     <item android:title="@string/Danh_sach"
         android:id="@+id/Danh_sach"
         android:icon="@mipmap/ic_list_black_36dp"/>
+
+    <item android:title="@string/Thong_ke"
+        android:icon="@mipmap/ic_pie_chart_black_36dp"
+        android:id="@+id/Thong_ke"/>
 </menu>

@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.user.myapplication.DTO.DanhSach;
+import com.example.user.myapplication.DTO.MothYear;
 import com.example.user.myapplication.Database.DBHelper;
 
 /**
@@ -22,7 +23,7 @@ public class DanhSachModify {
 
     public Cursor getListDanhSach()
     {
-        SQLiteDatabase db= dbHelper.getReadableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
         try {
             Cursor cursor = db.query(DBHelper.getTableNameChi(), new String[]{DBHelper.getKeyIdChi(), DBHelper.getKeyNgayChi()}, null, null, null, null, null);
             if (cursor != null) {
@@ -46,6 +47,8 @@ public class DanhSachModify {
         values.put(DBHelper.getKeySukienChi(), danhsach.getmSuKien());
         values.put(DBHelper.getKeyNgayChi(), danhsach.getmNgay());
         values.put(DBHelper.getKeyTaikhoanChi(), danhsach.getmTaiKhoan());
+        values.put(DBHelper.getKeyThangChi(), danhsach.getmThang());
+        values.put(DBHelper.getKeyNamChi(), danhsach.getmNam());
 
         db.insert(DBHelper.getTableNameChi(), null, values);
         db.close();

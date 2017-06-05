@@ -34,6 +34,14 @@
                 android:textAllCaps="false"
                 android:layout_alignParentLeft="true"/>
 
+            <ImageButton
+                android:id="@+id/imgBtn_Hang_muc_khac"
+                android:layout_alignParentEnd="true"
+                android:background="@mipmap/plus"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="2dp"/>
+
         </RelativeLayout>
 
         <LinearLayout
@@ -56,9 +64,5 @@
             </ListView>
 
         </LinearLayout>
-
-
-
     </LinearLayout>
-
 </LinearLayout>

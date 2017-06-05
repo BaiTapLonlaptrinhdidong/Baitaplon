@@ -11,6 +11,8 @@ public class DanhSachThu {
     private byte[] nTaiKhoan;
     private String nSuKien = "";
     private String nNgay= "";
+    private String nThang="";
+    private String nNam="";
 
     public DanhSachThu(int nId, String nMoney, String nDienGiai, byte[] nTaiKhoan, String nSuKien, String nNgay) {
         this.nId = nId;
@@ -21,12 +23,14 @@ public class DanhSachThu {
         this.nNgay = nNgay;
     }
 
-    public DanhSachThu(String nMoney, String nDienGiai, byte[] nTaiKhoan, String nSuKien, String nNgay) {
+    public DanhSachThu(String nMoney, String nDienGiai, byte[] nTaiKhoan, String nSuKien, String nNgay, String nThang, String nNam) {
         this.nMoney = nMoney;
         this.nDienGiai = nDienGiai;
         this.nTaiKhoan = nTaiKhoan;
         this.nSuKien = nSuKien;
         this.nNgay = nNgay;
+        this.nThang = nThang;
+        this.nNam = nNam;
     }
 
     public DanhSachThu() {
@@ -78,5 +82,21 @@ public class DanhSachThu {
 
     public void setnNgay(String nNgay) {
         this.nNgay = nNgay;
+    }
+
+    public String getnThang() {
+        return nThang;
+    }
+
+    public void setnThang(String nThang) {
+        this.nThang = nThang;
+    }
+
+    public String getnNam() {
+        return nNam;
+    }
+
+    public void setnNam(String nNam) {
+        this.nNam = nNam;
     }
 }

@@ -43,5 +43,7 @@ public class AdapterTaiKhoan extends CursorAdapter {
         ByteArrayInputStream stream= new ByteArrayInputStream(cursor.getBlob(3));
         Bitmap bmp= BitmapFactory.decodeStream(stream);
         imgTaiKhoan.setImageBitmap(bmp);
+
+        //txtMoney.setText(cursor.getInt(1));
     }
 }

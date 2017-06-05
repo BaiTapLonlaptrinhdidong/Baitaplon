@@ -30,3 +30,7 @@ dependencies {
     compile 'com.github.bloder:magic:1.1'
     compile 'com.aldoapps:autoformatedittext:0.9.3'
 }
+
+dependencies {
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+}

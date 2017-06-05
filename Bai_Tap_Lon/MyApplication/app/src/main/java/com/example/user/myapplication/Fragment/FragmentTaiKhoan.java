@@ -21,6 +21,7 @@ import com.example.user.myapplication.Activity.ActivityUpdateTaiKhoan;
 import com.example.user.myapplication.Adapter.AdapterTaiKhoan;
 import com.example.user.myapplication.Modify.TaiKhoanModify;
 import com.example.user.myapplication.MainActivity;
+import com.example.user.myapplication.Modify.ThongKeModify;
 import com.example.user.myapplication.R;
 
 /**
@@ -30,12 +31,14 @@ import com.example.user.myapplication.R;
 public class FragmentTaiKhoan extends Fragment {
 
     private ListView lvTai_khoan;
-    private ImageButton imgBtnAdd;
+    ImageButton imgBtnAdd;
 
     private Intent intent;
     private Bundle bundle= new Bundle();
-    private AdapterTaiKhoan adapter;
+    AdapterTaiKhoan adapter;
     private TaiKhoanModify taiKhoanModify;
+
+    //private ThongKeModify thongKeModify= new ThongKeModify(getActivity());
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
